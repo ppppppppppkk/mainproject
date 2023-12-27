@@ -1,18 +1,19 @@
 
 
 #wrap{
-    width: 1280px;
+    width: 400px;
+    margin: 0 auto;
 }
 h1{
     text-align: center;
     background-color: #bf3f34;
-    width: 300px;
+    width: 400px;
     margin: 10px auto;
 }
 #cate_box{
     text-align: center;
     background-color: #f2b872;
-    width: 500px;
+    width: 400px;
     margin: 10px auto;
 }
 #cate_box > input{
@@ -21,7 +22,7 @@ h1{
 #menu_box{
     text-align: center;
     background-color: #f2b872;
-    width: 700px;
+    width: 400px;
     margin: 10px auto;
 }
 #menu_box > input{
@@ -31,7 +32,7 @@ div > span{
     display: flex;
     justify-content: center;
     background-color: #20638c;
-    width: 700px;
+    width: 400px;
     height: 50px;
     margin: 10px auto;
     align-items: center;
