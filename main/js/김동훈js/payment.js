@@ -58,6 +58,7 @@ function payment(){
     totalPrice()
 }
 
+//총 주문금액 부분
 function totalPrice(){
     //1.어디에
     const totalP = document.querySelector("#totalPrice > span");
@@ -76,7 +77,7 @@ function totalPrice(){
 
 }
 
-
+//결제 완료 버튼 
 function successPayment(){
     const successPay = document.querySelector("#successPay")
 
@@ -93,7 +94,7 @@ function successPayment(){
 
 }
 
-
+// 더블 선택 함수 요청사항 부분
 document.addEventListener('DOMContentLoaded', function(){
     const select = document.querySelector('select')
     const p = document.querySelector('p')
