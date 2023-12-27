@@ -1,0 +1,38 @@
+body{
+    
+    border: 2px solid black;
+    text-align: center;
+}
+
+
+#paymentBtn > input{
+    width: 300px;
+    height: 150px;
+    text-align: center;
+
+}
+
+#totalPrice > .tpContent{
+    font-weight: bold;
+
+}
+
+#totalPrice > span{
+    color: red;
+    font-weight: bold;
+    
+}
+#print{
+    border: 1px solid pink;
+}
+img{
+    width: 100px; height: 100px;
+    padding-right: 509px;
+}
+
+#comp{
+    margin:  10px;
+}
+#complain > {
+    padding-top: 50px;
+}
