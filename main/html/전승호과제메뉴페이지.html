@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>과제 메뉴페이지</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/전승호과제.css'>
+    
+</head>
+<body>
+    <div>
+        해더
+        <!-- 해더영dd역 -->
+    </div>
+
+    <div id="goodsPage">
+        <div id="goodsCategory">
+            <!-- 카테고리 -->
+            <div onclick="categoryButton()" class="categoryChoose"><a href="#New">New</a></div>
+            <div><a href="#premium">프리미엄</a></div>
+            <div><a href="#halfnhalf">하프앤하프</a></div>
+            <div><a href="#classic">클래식</a></div>
+        </div>
+
+        <div class="categoryName" id="New"> New </div><!-- 제목 -->
+
+        <div class="goodsBundle" id="goodsBundleNew">
+            <!-- 출력부분 -->
+
+        </div><!-- New 끝 -->
+
+        <div class="categoryName" id="프리미엄"> 프리미엄 </div><!-- 제목 -->
+
+        <div class="goodsBundle" id="goodsBundlePremium">
+            <!-- 출력부분 -->
+
+        </div><!-- premium 끝 -->
+
+        <div class="categoryName" id="하프앤하프"> 하프앤하프 시그니처 </div><!-- 제목 -->
+
+        <div class="goodsBundle" id="goodsBundleHalfnhalf">
+            <!-- 출력부분 -->
+
+        </div><!-- halfnhalf 끝 -->
+
+        <div class="categoryName" id="클래식"> 클래식 </div><!-- 제목 -->
+
+        <div class="goodsBundle" id="goodsBundleClassic">
+            <!-- 출력부분 -->
+
+        </div><!-- classic 끝 -->
+
+        <div id="cartBox">
+            <div id="cartContent"><!-- 1번쨰 줄 -->
+                <div id="cartTop">
+                    <div> 카트수량 <span id="count">0</span></div>
+                </div>
+
+                <div id="cartBottom"><!-- 2번쨰줄  -->
+                    <div class="cartInfo">
+                        <!-- 장바구니의 제품들이 출력되는구역 -->
+                        <div>제품명</div>
+                        <div>가격</div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div id="cartBtns"><!-- 3번째 줄 -->
+                <input id="buttonBuy" type="button" value="주문하기">
+                <input id="buttonCencle" onclick="cartCencle()" type="button" value="취소하기">
+            </div>
+        </div>
+        
+    </div>
+
+    <div>
+        푸터
+        <!-- 푸터 영역 -->
+    </div>
+    
+
+    <script src='../js/전승호과제.js'></script>
+</body>
+</html>
