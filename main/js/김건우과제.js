@@ -20,5 +20,10 @@ const productItem = [
 
 // 카테고리 등록
 function cateWhite(){
+    // [어디에]
+    
+    // [무엇을]
+    
+    // [출력]
     
 }
