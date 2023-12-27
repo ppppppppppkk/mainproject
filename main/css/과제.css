@@ -1,0 +1,40 @@
+
+
+#wrap{
+    width: 1280px;
+}
+h1{
+    text-align: center;
+    background-color: #bf3f34;
+    width: 300px;
+    margin: 10px auto;
+}
+#cate_box{
+    text-align: center;
+    background-color: #f2b872;
+    width: 500px;
+    margin: 10px auto;
+}
+#cate_box > input{
+    margin-bottom: 5px;
+}
+#menu_box{
+    text-align: center;
+    background-color: #f2b872;
+    width: 700px;
+    margin: 10px auto;
+}
+#menu_box > input{
+    margin-bottom: 5px;
+}
+div > span{
+    display: flex;
+    justify-content: center;
+    background-color: #20638c;
+    width: 700px;
+    height: 50px;
+    margin: 10px auto;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+}
