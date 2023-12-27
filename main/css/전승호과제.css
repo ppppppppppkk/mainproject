@@ -4,11 +4,19 @@
 }
 *{font-family: 'Noto Sans KR', sans-serif;}
 /* *{border: solid 1px green;} */
-#goodsPage{width: 100%; margin: 0 auto; position: relative;}
+                        /*해더 CSS  */
+#위치지정용{position: relative;}
+    #shiftPage{width: 50px; height: 50px; position: absolute; right: 0;}
+    #header{display: flex; justify-content: center;}
+    #logoPizza{width: 200px; margin: -50px;}
+
+
+                    /* 메인CSS */
+#goodsPage{width: 400px; margin: 0 auto; position: relative;}
     #goodsCategory{
         position: sticky;
         top: 0px;
-        background-color: rgba(255, 255, 255, 0.432);
+        background-color: rgba(255, 255, 255);
         display: flex;
         text-align: center;
     }
@@ -31,11 +39,11 @@
         
     
     .goodsBundle{display: flex; flex-wrap: wrap; justify-content: space-between;}
-        .goodsForm{width: 380px; margin: 20px;}
-            .goodsForm>img{width: 380px;}
-            .goodsName{font-size: 20px; font-weight: bold; margin: 15px 0;}
+        .goodsForm{width: 40%; margin: 20px;}
+            .goodsForm>img{width: 100%;}
+            .goodsName{font-size: 16px; font-weight: bold; margin: 15px 0;}
             .markRed{color: red; font-weight: bold; margin-right: 4px;}
-            .goodsEx{margin: 15px 0; color: #888888;}
+            .goodsEx{font-size: 11px; margin: 15px 0; color: #888888;}
 
 
 #cartBox{

@@ -109,8 +109,10 @@ function 구매선택(매개변수){/* 매개변수 = 제품번호 */
     cartBox.style.display = 'block';
 
     let 출력위치 = document.querySelector('#cartBottom')
+
     let productItem = JSON.parse(localStorage.getItem('productItem'));/* 호출 */
     
+    let 수량 = productItem.length;
     let basket = ``; /* 선택한 품목 HTML형태로 만들기 */
     for(let i= 0; i<productItem.length; i++){
         if(productItem[i].productno==매개변수){
@@ -140,6 +142,18 @@ function 구매선택(매개변수){/* 매개변수 = 제품번호 */
         basket += 임시장바구니[a]
     }
 
+
+    let 총금액 = 0;/* 총금액 구하기 반복문 */
+    for(let b = 0; b<cart.length; b++){
+        for(let c = 0; c<productItem.length; c++){
+            if(productItem[c].productno==cart[b].productno){/* 카트번호와 아이템넘버가같으면 */
+                총금액 += productItem[c].pirce
+            }
+        }
+    }
+
+    document.querySelector('#totalPrice').innerHTML = `${총금액.toLocaleString()} 원`;
+    document.querySelector('#count').innerHTML = cart.length;
     출력위치.innerHTML = basket;/* 출력하기 */
 }
 function cartCencle(){
