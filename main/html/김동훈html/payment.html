@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/main/css/김동훈css/payment.css'>
+   
+</head>
+<body>
+    
+    <div id="paymentWrap">
+        <div>
+            메뉴 장바구니 들어오는 부분!!!!!!!!!!!!!!!!!
+        </div>
+
+
+        <div id="paymentBtn">
+
+            <input onclick="cancel()" type="button" value="결제취소"/>
+            <input class="payBtn" onclick="payment()" type="button" value="결제하기"/>
+
+        </div>
+        <div id="print">
+           
+        </div>
+        <div id="totalPrice">
+            <div class="tpContent">총 주문금액</div> : <span></span>
+        </div>
+
+        <div>
+            <input id="successPay" onclick="successPayment()" type="button" value="결제 완료"/>
+        </div>
+
+
+    </div>
+    <script src='/main/js/김동훈js/payment.js'></script>
+</body>
+</html>
