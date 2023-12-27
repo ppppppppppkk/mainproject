@@ -105,6 +105,8 @@ function category출력(매개변수){
 
 function 구매선택(매개변수){/* 매개변수 = 제품번호 */
     console.log(매개변수+"실행됨")
+    const cartBox = document.querySelector('#cartBox')
+    cartBox.style.display = 'block';
 
     let 출력위치 = document.querySelector('#cartBottom')
     let productItem = JSON.parse(localStorage.getItem('productItem'));/* 호출 */
@@ -139,6 +141,31 @@ function 구매선택(매개변수){/* 매개변수 = 제품번호 */
     }
 
     출력위치.innerHTML = basket;/* 출력하기 */
+}
+function cartCencle(){
+    cart.splice(0)
+    임시장바구니.splice(0)
+    localStorage.setItem("cart",JSON.stringify(cart)) /* 로컬저장 */ 
+    const cartBox = document.querySelector('#cartBox')
+    cartBox.style.display = 'none';
+    장바구니출력함수()
+}
 
+function 주문하기(){
+    location.href = ""/* 경로써야함 */
+}
+function 장바구니출력함수(매개변수){/* 취소전용 함수 : 취소하면 장바구니 재 출력용(사라짐) */
+    let 출력위치 = document.querySelector('#cartBottom')
+    let productItem = JSON.parse(localStorage.getItem('productItem'));/* 호출 */
     
+    let basket = ``; /* 선택한 품목 HTML형태로 만들기 */
+    for(let i= 0; i<productItem.length; i++){
+        if(productItem[i].productno==매개변수){
+            basket += `<div class="cartInfo">
+                        <div>${productItem[i].item}</div>
+                        <div>${productItem[i].pirce.toLocaleString()} 원</div>
+                    </div>`
+        }
+    }
+    출력위치.innerHTML = basket;/* 출력하기 */
 }
