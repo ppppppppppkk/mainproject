@@ -152,7 +152,7 @@ function cartCencle(){
 }
 
 function 주문하기(){
-    location.href = ""/* 경로써야함 */
+    location.href = "../html/김동훈html/payment.html"/* 경로써야함 */
 }
 function 장바구니출력함수(매개변수){/* 취소전용 함수 : 취소하면 장바구니 재 출력용(사라짐) */
     let 출력위치 = document.querySelector('#cartBottom')
