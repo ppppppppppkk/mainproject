@@ -9,10 +9,13 @@
    
 </head>
 <body>
-    
+    <div>
+        <img src="img/도미노피자_로고_(1).png">
+    </div>
+
     <div id="paymentWrap">
         <div>
-            메뉴 장바구니 들어오는 부분!!!!!!!!!!!!!!!!!
+            메뉴 장바구니 들어오는 부분
         </div>
 
 
@@ -25,14 +28,26 @@
         <div id="print">
            
         </div>
+        <div id="mainrayout">
         <div id="totalPrice">
             <div class="tpContent">총 주문금액</div> : <span></span>
         </div>
 
+        <select multiple>
+            <option> 일회용수저O </option>
+            <option> 일회용수저X </option>
+            <option> 피클 많이주세요</option>
+            <option> 맛있게 해주세요</option>
+        </select>
+
+        <p> </p>
+      
+
         <div>
             <input id="successPay" onclick="successPayment()" type="button" value="결제 완료"/>
         </div>
-
+    </div>
+           
 
     </div>
     <script src='/main/js/김동훈js/payment.js'></script>
