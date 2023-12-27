@@ -1,3 +1,5 @@
+
+const 임시장바구니 =[]
 let pay = [];
 let cart = [] ;
 console.log(cart);
@@ -110,8 +112,10 @@ function successPayment(){
     console.log( totalpay );
     if(   enterpay == totalpay){
         alert("결제가 완료되었습니다.")
+    }else if(enterpay>totalpay){
+        alert(`결제가 완료되었습니다. 거스름돈은 : ${enterpay-totalpay} 입니다.`)
     }else{
-        alert("결제가 실패되었습니다.")
+        alert("결제 실패했습니다.")
     }
 
 }

@@ -1,5 +1,7 @@
+
+const 임시장바구니 =[]
 let pay = [];
-let cart = [{name : 'product1', pay : 1000}, {name : 'produce2' ,pay : 2000}, {name : 'product3' , pay:3000},{name : 'product4' , pay:4000}] ;
+let cart = [] ;
 console.log(cart);
 
 const categoryCell = [{cateno:1,catename:"New"},{cateno:2,catename:"프리미엄"},{cateno:3,catename:"하프앤하프"},{cateno:4,catename:"클래식"}]
@@ -36,6 +38,21 @@ function cancel(){
     console.log(cart)
 }
 
+function 페이에담김제품정보출력(){
+    const payMent = document.querySelector("#print")
+    let html =``
+    for(let i = 0; i<pay.length; i++){
+        
+        for( let j = 0 ; j<productItem.length ; j++ ){
+
+            if( pay[i] == productItem[j].productno){
+                html += `제품명 : ${ productItem[j].item } & 가격 : ${ productItem[j].pirce } //`
+            }
+        }
+   };
+    payMent.innerHTML = html;
+
+}
 
 // 결제 함수 
 /* 결제 버튼을 누르면 pay라는 배열에 cart에 있는 배열을 추가한다. */
@@ -44,9 +61,9 @@ function payment(){
     const payMent = document.querySelector("#print")
     //2.무엇을 //cart배열에 있는 배열값을 pay 배열로 이동 
     
-
+    let cart = JSON.parse(localStorage.getItem('cart'));/* 호출 */
     for(let i = 0; i<cart.length; i++){
-         pay.push(cart[i]);
+         pay.push(cart[i].productno);
     };
     const json = JSON.stringify(pay)
     console.log(pay)
@@ -56,18 +73,26 @@ function payment(){
     console.log(cart)
     //cart.length =0;    // 장바구니 초기화.
     totalPrice()
+    페이에담김제품정보출력();
 }
 
+//총 주문금액 부분
 function totalPrice(){
     //1.어디에
     const totalP = document.querySelector("#totalPrice > span");
     //2.무엇을
     let totalprice = 0;
-    for(let i=0; i<pay.length; i++){
 
-        totalprice += pay[i].pay
-        console.log(totalprice)
-    }
+    for(let i = 0; i<pay.length; i++){
+        
+        for( let j = 0 ; j<productItem.length ; j++ ){
+
+            if( pay[i] == productItem[j].productno){
+                totalprice += Number( productItem[j].pirce )
+            }
+        }
+   };
+
     //3.출력
     totalP.innerHTML=totalprice;
     console.log(totalprice);
@@ -76,7 +101,7 @@ function totalPrice(){
 
 }
 
-
+//결제 완료 버튼 
 function successPayment(){
     const successPay = document.querySelector("#successPay")
 
@@ -87,13 +112,15 @@ function successPayment(){
     console.log( totalpay );
     if(   enterpay == totalpay){
         alert("결제가 완료되었습니다.")
+    }else if(enterpay>totalpay){
+        alert(`결제가 완료되었습니다. 거스름돈은 : ${enterpay-totalpay} 입니다.`)
     }else{
-        alert("결제가 실패되었습니다.")
+        alert("결제 실패했습니다.")
     }
 
 }
 
-
+// 더블 선택 함수 요청사항 부분
 document.addEventListener('DOMContentLoaded', function(){
     const select = document.querySelector('select')
     const p = document.querySelector('p')
