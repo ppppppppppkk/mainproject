@@ -9,8 +9,11 @@
    
 </head>
 <body>
+    <div> 
+        <h3> 결제 페이지</h3>
+    </div>
     <div>
-        <img src="../../img/도미노피자_로고_(1).png">
+       <a href="전승호과제메뉴페이지.html"> <img  src="../../img/도미노피자_로고_(1).png"> </a>
     </div>
 
     <div id="paymentWrap">
@@ -21,7 +24,7 @@
 
         <div id="paymentBtn">
 
-            <input onclick="cancel()" type="button" value="결제취소"/>
+            <input id="inButton" onclick="cancel()" type="button" value="결제취소"/>
             <input class="payBtn" onclick="payment()" type="button" value="결제하기"/>
 
         </div>
@@ -50,6 +53,6 @@
            
 
     </div>
-    <script src='/main/js/main.js'></script>
+    <script src='../js/main.js'></script>
 </body>
 </html>

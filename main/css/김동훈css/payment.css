@@ -1,7 +1,10 @@
 body{
-    
+    margin-left: 40%;
+    width: 400px;
+    margin-top: 180px;
     border: 2px solid black;
     text-align: center;
+    
 }
 
 
@@ -36,3 +39,7 @@ img{
 #complain > {
     padding-top: 50px;
 }
+#paymentBtn{
+    display: flex;
+}
+
