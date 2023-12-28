@@ -1,5 +1,8 @@
 let pay = [];
+let cart = [] ;
+
 const categoryCell = [{cateno:1,catename:"New"},{cateno:2,catename:"프리미엄"},{cateno:3,catename:"하프앤하프"},{cateno:4,catename:"클래식"}]
+
 const productItem = [
     {productno: 1,item : "스노우 브리스킷 바비Q",cateno : 1,pirce : 35900,img:"img/스노우브리스킷바비Q.jpg",설명 : "#Light up! Christmas 스노우 피자 출시<br/>#육즙 가득 브리스킷과 트러플핑크 페퍼 치즈 소스,스위트 리코타치즈로 풍미를 더하다!"},
     {productno: 2,item : "스노우 블랙타이거 슈림프",cateno : 1,pirce : 37900,img :"img/스노우블랙타이거슈림프.jpg",설명 : "#Light up! Christmas 스노우 피자 출시<br/>#탱글하고 쫄깃한 블랙타이거 새우와 스위트 리코타 치즈의 조화, 압도적인 비주얼!" },
@@ -20,10 +23,73 @@ const productItem = [
 
 // 카테고리 등록
 function cateWhite(){
+
+    let categoryCell = JSON.parse(localStorage.getItem('categoryCell'));/* 호출 */
+    console.log(categoryCell);
     // [어디에]
+    const cate_number = document.querySelector("#cateNo").value;
+    const cate_name = document.querySelector("#cateName").value;
+    // [처리]
+
+    let 함수추가용객체 ={};/* 임시 */
+    /* 배열 추가를 위해 만듬 */
     
-    // [무엇을]
+    함수추가용객체.cateno = Number(cate_number);
+    함수추가용객체.catename=cate_name;
     
+    categoryCell.push(함수추가용객체)
+    
+    console.log(함수추가용객체)  /* 테스트 */
+    console.log(categoryCell)   /* 테스트 */
+
+
     // [출력]
+    localStorage.setItem("categoryCell",JSON.stringify(categoryCell)) /* 저장 */
+}
+
+// 카테고리 삭제
+function cateDelet(){
     
+    let categoryCell = JSON.parse(localStorage.getItem('categoryCell'));/* 호출 */
+    const cate_number = document.querySelector("#cateNo").value
+    console.log(categoryCell)    
+
+    for(let i = 0; i < categoryCell.length; i++){
+            
+        if(cate_number == categoryCell[i].cateno){
+            categoryCell.splice([i],1)
+        }
+    }
+    console.log("실행")
+    localStorage.setItem("categoryCell",JSON.stringify(categoryCell)) /* 저장 */
+}
+
+// 메뉴 등록
+function menuWhite(){
+    console.log("함수실행")
+    let productItem = JSON.parse(localStorage.getItem('productItem'));
+    console.log(productItem);
+
+    const menu_img = document.querySelector("#menuImg").value;
+    const cate_number = document.querySelector("#cateNo").value;
+    const menu_number = document.querySelector("#productNo").value;
+    const menu_name = document.querySelector("#productName").value;
+    const menu_price = document.querySelector("#pprice").value;
+    const menu_text = document.querySelector("#textArea").value;
+
+    let 함수추가용객체 ={};
+
+    함수추가용객체.productno = menu_number;
+    함수추가용객체.item = menu_name;
+    함수추가용객체.cateno = Number(cate_number);
+    함수추가용객체.pirce = menu_price;
+    함수추가용객체.img = menu_img;
+    함수추가용객체.설명 = menu_text;
+
+    productItem.push(함수추가용객체)
+    
+    console.log(함수추가용객체)  /* 테스트 */
+    console.log(productItem)
+
+    localStorage.setItem("productItem",JSON.stringify(productItem)) /* 저장 */
 }
