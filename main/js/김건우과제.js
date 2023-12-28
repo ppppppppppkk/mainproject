@@ -1,4 +1,4 @@
-let pay = [];
+/* 
 let cart = [] ;
 
 const categoryCell = [{cateno:1,catename:"New"},{cateno:2,catename:"프리미엄"},{cateno:3,catename:"하프앤하프"},{cateno:4,catename:"클래식"}]
@@ -18,7 +18,7 @@ const productItem = [
     {productno: 12,item : "불고기 체다 스타라이트",cateno : 4,pirce : 29900,img :"img/불고기 체다 스타라이트.jpg",설명 : "#[도미노x슈퍼 마리오]슈퍼 스타의 별빛에 영감을 받아 탄생한 피자!" },
     {productno: 13,item : "리코타 페퍼로니 킹덤",cateno : 4,pirce : 29900,img :"img/리코타 페퍼로니 킹덤.jpg",설명 : "#[도미노x슈퍼 마리오]페퍼로니 가득한 도미노만의 버섯왕국이 눈앞에!" },
     {productno: 14,item : "포테이토",cateno : 4,pirce : 27900,img :"img/포테이토.jpg",설명 : "#도미노피자 No.1 레전드" }
-]
+] */
 
 
 // 카테고리 등록
@@ -79,10 +79,10 @@ function menuWhite(){
 
     let 함수추가용객체 ={};
 
-    함수추가용객체.productno = menu_number;
+    함수추가용객체.productno = Number(menu_number);
     함수추가용객체.item = menu_name;
-    함수추가용객체.cateno = Number(cate_number);
-    함수추가용객체.pirce = menu_price;
+    함수추가용객체.cateno = Number(cate_number+1);
+    함수추가용객체.pirce = Number(menu_price);
     함수추가용객체.img = menu_img;
     함수추가용객체.설명 = menu_text;
 
@@ -91,5 +91,25 @@ function menuWhite(){
     console.log(함수추가용객체)  /* 테스트 */
     console.log(productItem)
 
+    localStorage.setItem("productItem",JSON.stringify(productItem)) /* 저장 */
+}
+
+// 메뉴 삭제
+function menuDelet(){
+    
+    let productItem = JSON.parse(localStorage.getItem('productItem'));/* 호출 */
+    
+    const menu_number = document.querySelector("#productNo").value;
+   
+    console.log(productItem)    
+
+    for(let i = 0; i < productItem.length; i++){
+            
+        if(menu_number == productItem[i].productNo
+            ){
+            productItem.splice([i],1)
+        }
+    }
+    console.log("실행")
     localStorage.setItem("productItem",JSON.stringify(productItem)) /* 저장 */
 }
