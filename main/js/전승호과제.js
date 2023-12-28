@@ -26,70 +26,88 @@ const cart =[];
 category출력(1)
 출력하기()
 function 출력하기(){/* 메뉴 */
-    const goodsBundleNew = document.querySelector("#goodsBundleNew")/* 출력할 위치 */
+    const goodsBundle = document.querySelector("#goodsBundle")/* 출력할 위치 */
     let productItem = JSON.parse(localStorage.getItem('productItem'));/* 호출 */
+    let categoryCell = JSON.parse(localStorage.getItem('categoryCell'));/* 호출 */
+
     let 출력물New = ``
-    for(let i = 0; i < productItem.length; i++){
-        if(productItem[i].cateno == 1){ /* 카테고리 1번만 출력 */
-            출력물New += `<div class="goodsForm">
-                        <img onclick="구매선택(${productItem[i].productno})" src="${productItem[i].img}"/>
-                        <div class="goodsName">${productItem[i].item}</div>
-                        <div><span class="markRed">L</span><span>${productItem[i].pirce.toLocaleString()}원</span></div>
+    for(let a = 0; a<categoryCell.length; a++ ){
+        출력물New +=`<div class="categoryName" id="${categoryCell[a].catename}"> ${categoryCell[a].catename} </div>`
+        for(let i= 0; i < productItem.length; i++ ){
+            if(productItem[i].cateno==categoryCell[a].cateno){
+            출력물New +=`<div class="goodsForm">
+                            <img onclick="구매선택(${productItem[i].productno})" src="${productItem[i].img}"/>
+                            <div class="goodsName">${productItem[i].item}</div>
+                            <div><span class="markRed">L</span><span>${productItem[i].pirce.toLocaleString()}원</span></div>
+
+                            <div class="goodsEx">${productItem[i].설명}</div>
+                        </div>`
+            }
+        }
+    }
+    goodsBundle.innerHTML = 출력물New;
+    
+    // for(let i = 0; i < productItem.length; i++){
+    //     if(productItem[i].cateno == 1){ /* 카테고리 1번만 출력 */
+    //         출력물New += `<div class="goodsForm">
+    //                     <img onclick="구매선택(${productItem[i].productno})" src="${productItem[i].img}"/>
+    //                     <div class="goodsName">${productItem[i].item}</div>
+    //                     <div><span class="markRed">L</span><span>${productItem[i].pirce.toLocaleString()}원</span></div>
             
-                        <div class="goodsEx">${productItem[i].설명}</div>
-                    </div>`}
-    };
-    goodsBundleNew.innerHTML = 출력물New;
+    //                     <div class="goodsEx">${productItem[i].설명}</div>
+    //                 </div>`}
+    // };
+    // goodsBundleNew.innerHTML = 출력물New;
     // ------------------------------------------------------------------------
 
-    const goodsBundlePremium = document.querySelector("#goodsBundlePremium")/* 출력할 위치 */
-    let 출력물pre = ``
-    for(let i = 0; i < productItem.length; i++){
-        if(productItem[i].cateno == 2){ /* 카테고리 2번만 출력 */
-            출력물pre += `<div class="goodsForm">
-                        <img onclick="구매선택(${productItem[i].productno})" src="${productItem[i].img}"/>
-                        <div class="goodsName">${productItem[i].item}</div>
-                        <div><span class="markRed">L</span><span>${productItem[i].pirce.toLocaleString()}원</span></div>
+    // const goodsBundlePremium = document.querySelector("#goodsBundlePremium")/* 출력할 위치 */
+    // let 출력물pre = ``
+    // for(let i = 0; i < productItem.length; i++){
+    //     if(productItem[i].cateno == 2){ /* 카테고리 2번만 출력 */
+    //         출력물pre += `<div class="goodsForm">
+    //                     <img onclick="구매선택(${productItem[i].productno})" src="${productItem[i].img}"/>
+    //                     <div class="goodsName">${productItem[i].item}</div>
+    //                     <div><span class="markRed">L</span><span>${productItem[i].pirce.toLocaleString()}원</span></div>
             
-                        <div class="goodsEx">${productItem[i].설명}</div>
-                    </div>`}
-    };
-    goodsBundlePremium.innerHTML = 출력물pre;
-    // ------------------------------------------------------------------------
+    //                     <div class="goodsEx">${productItem[i].설명}</div>
+    //                 </div>`}
+    // };
+    // goodsBundlePremium.innerHTML = 출력물pre;
+    // // ------------------------------------------------------------------------
 
-    const goodsBundleHalfnhalf = document.querySelector("#goodsBundleHalfnhalf")/* 출력할 위치 */
-    let 출력물half = ``
-    for(let i = 0; i < productItem.length; i++){
-        if(productItem[i].cateno == 3){ /* 카테고리 3번만 출력 */
-        출력물half += `<div class="goodsForm">
-                        <img onclick="구매선택(${productItem[i].productno})" src="${productItem[i].img}"/>
-                        <div class="goodsName">${productItem[i].item}</div>
-                        <div><span class="markRed">L</span><span>${productItem[i].pirce.toLocaleString()}원</span></div>
+    // const goodsBundleHalfnhalf = document.querySelector("#goodsBundleHalfnhalf")/* 출력할 위치 */
+    // let 출력물half = ``
+    // for(let i = 0; i < productItem.length; i++){
+    //     if(productItem[i].cateno == 3){ /* 카테고리 3번만 출력 */
+    //     출력물half += `<div class="goodsForm">
+    //                     <img onclick="구매선택(${productItem[i].productno})" src="${productItem[i].img}"/>
+    //                     <div class="goodsName">${productItem[i].item}</div>
+    //                     <div><span class="markRed">L</span><span>${productItem[i].pirce.toLocaleString()}원</span></div>
             
-                        <div class="goodsEx">${productItem[i].설명}</div>
-                    </div>`}
-    };
-    goodsBundleHalfnhalf.innerHTML = 출력물half;
-    // ------------------------------------------------------------------------
+    //                     <div class="goodsEx">${productItem[i].설명}</div>
+    //                 </div>`}
+    // };
+    // goodsBundleHalfnhalf.innerHTML = 출력물half;
+    // // ------------------------------------------------------------------------
 
-    const goodsBundleClassic = document.querySelector("#goodsBundleClassic")/* 출력할 위치 */
-    let 출력물classic = ``
-    for(let i = 0; i < productItem.length; i++){
-        if(productItem[i].cateno == 4){ /* 카테고리 3번만 출력 */
-        출력물classic += `<div class="goodsForm">
-                        <img onclick="구매선택(${productItem[i].productno})" src="${productItem[i].img}"/>
-                        <div class="goodsName">${productItem[i].item}</div>
-                        <div><span class="markRed">L</span><span>${productItem[i].pirce.toLocaleString()}원</span></div>
+    // const goodsBundleClassic = document.querySelector("#goodsBundleClassic")/* 출력할 위치 */
+    // let 출력물classic = ``
+    // for(let i = 0; i < productItem.length; i++){
+    //     if(productItem[i].cateno == 4){ /* 카테고리 3번만 출력 */
+    //     출력물classic += `<div class="goodsForm">
+    //                     <img onclick="구매선택(${productItem[i].productno})" src="${productItem[i].img}"/>
+    //                     <div class="goodsName">${productItem[i].item}</div>
+    //                     <div><span class="markRed">L</span><span>${productItem[i].pirce.toLocaleString()}원</span></div>
             
-                        <div class="goodsEx">${productItem[i].설명}</div>
-                    </div>`}
-    };
-    goodsBundleClassic.innerHTML = 출력물classic;
+    //                     <div class="goodsEx">${productItem[i].설명}</div>
+    //                 </div>`}
+    // };
+    // goodsBundleClassic.innerHTML = 출력물classic;
 
 }
 function category출력(매개변수){
     let categoryCell = JSON.parse(localStorage.getItem('categoryCell'));/* 호출 */
-    const goodsCategory = document.querySelector("#goodsCategory")
+    const goodsCategory = document.querySelector("#goodsCategory") /* 출력위치 */
     
     let 출력용 = ``;
 
