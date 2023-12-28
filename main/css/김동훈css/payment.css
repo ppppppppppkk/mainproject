@@ -1,9 +1,10 @@
 body{
-    margin-left: 40%;
-    width: 400px;
-    margin-top: 180px;
+    
+    width: 350px;
+   
     border: 2px solid black;
     text-align: center;
+    margin: auto;
     
 }
 
@@ -17,7 +18,7 @@ body{
 
 #totalPrice > .tpContent{
     font-weight: bold;
-
+    color: red;
 }
 
 #totalPrice > span{
@@ -41,5 +42,15 @@ img{
 }
 #paymentBtn{
     display: flex;
+    justify-content: space-between;
+    margin: 30px;
+    
 }
 
+#pay_page{ 
+    font-weight: bold;
+    margin: 20px ;
+}
+#payBtn{
+    
+}
