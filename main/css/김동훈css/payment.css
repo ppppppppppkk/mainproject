@@ -28,6 +28,7 @@ body{
 }
 #print{
     border: 1px solid pink;
+    
 }
 img{
     width: 100px; height: 100px;
@@ -54,3 +55,8 @@ img{
 #payBtn{
     
 }
+.tpContent{ 
+    margin-top: 16px;
+    
+}
+
