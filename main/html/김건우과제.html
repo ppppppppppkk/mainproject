@@ -6,31 +6,32 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='../css/김건우과제.css'>
-    <script src='../js/김건우과제.js'></script>
+    
 </head>
 <body>
     <div id="wrap">
+        
         <div>
             <h1>관리자 페이지</h1>
                 <div id="cate_box">
                     <h3>카테고리 등록</h3>
-                        <input type="number" />
-                        <input type="text" />
+                        <input id="cateNo" type="number" />
+                        <input id="cateName" type="text" />
                         <br/>
                         <input onclick="cateWhite()" type="button" value="등록"/>
-                        <input onclick="" type="button" value="삭제"/>
+                        <input onclick="cateDelet()" type="button" value="삭제"/>
                             
                 </div>
                 
                 <div id="menu_box">
                     <h3>메뉴 등록</h3>
-                        이미지 등록<input type="file"> <br/>
-                        카테고리 번호:<input type="number" /> <br/>
-                        제품 번호:<input type="number" /> <br/>
-                        제품 이름:<input type="text" /> <br/>
-                        가격 :<input type="text" /> <br/><br/>
-                        설명 :<textarea></textarea> <br/>
-                        <input onclick="" type="button" value="등록"/>
+                        이미지 등록<input id="menuImg" type="file"> <br/>
+                        카테고리 번호:<input id="cateNo" type="number" /> <br/>
+                        제품 번호:<input id="productNo" type="number" /> <br/>
+                        제품 이름:<input id="productName" type="text" /> <br/>
+                        가격 :<input id="pprice" type="text" /> <br/><br/>
+                        설명 :<textarea id="textArea"></textarea> <br/>
+                        <input onclick="menuWhite()" type="button" value="등록"/>
                         <input onclick="" type="button" value="삭제"/>
                     
                 </div>
@@ -38,6 +39,11 @@
 
         <div>
             <span><!-- JS 총매출나오는 구간 -->총매출 : 원</span>
+
+        </div>
+
+        <div>
+            <a href="전승호과제메뉴페이지.html"><img src="../../img/도미노피자_로고_(1).png"/></a>
 
         </div>
 
@@ -52,5 +58,6 @@
 
 
     </div>
+    <script src='../js/김건우과제.js'></script>
 </body>
 </html>
