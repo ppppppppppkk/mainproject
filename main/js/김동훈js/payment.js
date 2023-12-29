@@ -2,6 +2,7 @@
 const 임시장바구니 =[]
 let pay = [];
 let cart = [] ;
+
 console.log(cart);
 
 const categoryCell = [{cateno:1,catename:"New"},{cateno:2,catename:"프리미엄"},{cateno:3,catename:"하프앤하프"},{cateno:4,catename:"클래식"}]
@@ -27,7 +28,7 @@ function cancel(){
     //1.어디에
     const cancel = document.querySelector("#print")
     //2.무엇을 // cart에 담겨진 모든 값을 삭제한다.
-    
+     
     if(confirm("장바구니를 비우겠습니까?")){
         cart.length =0;
         cancel.innerHTML = `장바구니가 비었습니다.`;
@@ -36,6 +37,7 @@ function cancel(){
     //3.출력
     totalPrice();
     console.log(cart)
+    location.href="../../html/전승호과제메뉴페이지.html"
 }
 
 function 페이에담김제품정보출력(){
@@ -46,7 +48,7 @@ function 페이에담김제품정보출력(){
         for( let j = 0 ; j<productItem.length ; j++ ){
 
             if( pay[i] == productItem[j].productno){
-                html += `제품명 : ${ productItem[j].item } & 가격 : ${ productItem[j].pirce } //`
+                html += `제품명 : ${ productItem[j].item } & 가격 : ${ productItem[j].pirce } <br/>`
             }
         }
    };
@@ -58,7 +60,7 @@ function 페이에담김제품정보출력(){
 /* 결제 버튼을 누르면 pay라는 배열에 cart에 있는 배열을 추가한다. */
 function payment(){
     //1.어디에
-    const payMent = document.querySelector("#print")
+    const payMent = document.querySelector("#print")/* 출력위치 */
     //2.무엇을 //cart배열에 있는 배열값을 pay 배열로 이동 
     
     let cart = JSON.parse(localStorage.getItem('cart'));/* 호출 */
@@ -94,7 +96,7 @@ function totalPrice(){
    };
 
     //3.출력
-    totalP.innerHTML=totalprice;
+    totalP.innerHTML=totalprice.toLocaleString()+"원";
     console.log(totalprice);
 
     return totalprice;
@@ -105,15 +107,25 @@ function totalPrice(){
 function successPayment(){
     const successPay = document.querySelector("#successPay")
 
+    let 총금액 = JSON.parse(localStorage.getItem('총금액'));/* 호출 */
+    console.log("총금액"+총금액)
+    if(총금액 == null){총금액 = []}
     let enterpay = prompt("결제 금액을 입력하세요");
     enterpay = Number(enterpay);
 
     let totalpay = totalPrice()
+    let 총금액임시 ={};/* 객체 로컬추가용 임시 변수 */
     console.log( totalpay );
     if(   enterpay == totalpay){
         alert("결제가 완료되었습니다.")
+        총금액임시.pirce=totalpay;
+        총금액+=총금액임시;
+        localStorage.setItem("총금액",JSON.stringify(총금액))/* 로컬저장 */
     }else if(enterpay>totalpay){
         alert(`결제가 완료되었습니다. 거스름돈은 : ${enterpay-totalpay} 입니다.`)
+        총금액임시.pirce=totalpay
+        총금액+=총금액임시;
+        localStorage.setItem("총금액",JSON.stringify(총금액))/* 로컬저장 */
     }else{
         alert("결제 실패했습니다.")
     }
@@ -136,3 +148,34 @@ document.addEventListener('DOMContentLoaded', function(){
         p.textContent = `가게 요청사항: ${list}`
     })
 })
+
+
+document.addEventListener('DOMContentLoaded', function(){ //HTML모두 읽었을때 이벤트 함수 실행
+     결제페이지카트출력();    
+})
+function 결제페이지카트출력(){// 함수 선언[실행조건 임시장바구니에서 결제페이지 왔을때 JS실행시 바로 실행=]   
+    console.log('결제페이지카트출력()' );
+    //1.어디에
+    const menuLine = document.querySelector('.MenuL_ine');
+    //2.무엇을
+    let html = ''; 
+        let cart = JSON.parse (localStorage.getItem('cart'));
+        for(let i = 0; i<cart.length; i++){
+            // 카트에 있는 제품번호를 하나씩 호출
+            let productno = cart[i].productno;
+            // productno 해당하는 제품을 찾기. [ ]
+            for( let j = 0 ; j<productItem.length ; j++ ){
+                // 만약에 i번째 카트제품번호와 제품목록에 j번째 제품번호와 같으면.
+                if( productno == productItem[j].productno ){
+                    
+                    console.log( productno );
+                    console.log( productItem[j] ); // 찾은 제품정보.
+
+                    html += `<p> 메뉴: ${ productItem[j].item }, 가격: ${ productItem[j].pirce.toLocaleString() }원 </p>`
+                }
+            }
+        }
+    //3. 출력
+    menuLine.innerHTML = html;
+} // f end 
+

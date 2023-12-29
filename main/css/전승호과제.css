@@ -37,7 +37,7 @@
             border-bottom: 3px solid black;}
 
         
-    
+    .상품영역{display: flex; flex-wrap: wrap; }
     .goodsBundle{display: flex; flex-wrap: wrap; justify-content: space-between;}
         .goodsForm{width: 40%; margin: 20px;}
             .goodsForm>img{width: 100%;}
