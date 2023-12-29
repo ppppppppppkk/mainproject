@@ -10,21 +10,25 @@
 </head>
 <body>
     <div id="pay_page"> 결제페이지 </div>
-    <div>
+    <div id="headPage">
        <a href="../전승호과제메뉴페이지.html"> <img src="../../../img/도미노피자_로고_(1).png"> </a>
     </div>
 
+    <hr color="#0078AE" size="1px">
+
     <div id="paymentWrap">
         <div class="MenuL_ine"> 
-           <button type="button" value="삭제">
-            
+       
         </div>
         <div id="paymentBtn">
             
-            <input onclick="cancel()" type="button" value="결제취소"/>
+            <input class='payBtnC' onclick="cancel()" type="button" value="결제취소"/>
             <input class="payBtn" onclick="payment()" type="button" value="결제하기"/>
-
+            
         </div>
+
+        <hr color="#0078AE" size="1px">
+
         <div id="print">
            
         </div>
@@ -48,6 +52,21 @@
         </div>
     </div>
            
+
+    </div>
+
+    <div id="orderList">
+        <table border="1">
+            <th>주문번호</th>
+            <th>주문날짜</th>
+            <th>제품번호</th>
+            <tr>
+                <td class="ordernum">1</td>
+                <td class="orderdate">2</td>
+                <td class="orderproduct">3</td>
+            </tr>
+
+        </table>
 
     </div>
     <script src='../../../main/js/김동훈js/payment.js'></script>
