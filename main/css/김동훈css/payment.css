@@ -9,13 +9,15 @@ body{
     border: 2px solid black;
     text-align: center;
     margin: 0 auto;
+    background-color: #d5e5f4;
     
 }
 
 .MenuL_ine{
-    background-color: pink;
+    background-color: rgba(0, 120, 174, 0.8) ;
     border-radius: 15px;
     padding: 3px 0px;
+    color: white;
 }
 
 
@@ -45,8 +47,9 @@ body{
 }
 #print{
     border-radius: 15px;
-    background-color: pink;
+    background-color: rgba(0, 120, 174, 0.8) ;
     padding: 3px 0px;
+    color: white;
 }
 img{
     

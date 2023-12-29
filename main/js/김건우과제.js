@@ -1,6 +1,6 @@
-// const 비밀번호 = 1002;
-// const 입력된비번 = prompt("관리자 비밀번호를 쓰세요")
-// if( 비밀번호 == 입력된비번){
+ const 비밀번호 = 1002;
+ const 입력된비번 = prompt("관리자 비밀번호를 쓰세요")
+ if( 비밀번호 == 입력된비번){
 
 
 
@@ -29,13 +29,14 @@ function cateWhite(){
     함수추가용객체.catename=cate_name;
     
     categoryCell.push(함수추가용객체)
-    
+    alert("등록완료 ^ㅡ^");
     console.log(함수추가용객체)  /* 테스트 */
     console.log(categoryCell)   /* 테스트 */
 
 
     // [출력]
     localStorage.setItem("categoryCell",JSON.stringify(categoryCell)) /* 저장 */
+    document.querySelector.value = '';
     카테고리출력();
 }
 
@@ -76,34 +77,34 @@ function menuWhite(){
     함수추가용객체.설명 = menu_text;
 
     productItem.push(함수추가용객체)
-    
+    alert("등록완료 ^ㅡ^");
     console.log(함수추가용객체)  /* 테스트 */
     console.log(productItem)
 
     localStorage.setItem("productItem",JSON.stringify(productItem)) /* 저장 */
 }
 
-// 메뉴 삭제
-function menuDelete(){
+// // 메뉴 삭제
+// function menuDelete(){
     
-    let productItem = JSON.parse(localStorage.getItem('productItem'));/* 호출 */
+//     let productItem = JSON.parse(localStorage.getItem('productItem'));/* 호출 */
     
-    const menu_number = Number(document.querySelector("#productNo").value);
+//     const menu_number = Number(document.querySelector("#productNo").value);
    
-    console.log(productItem)    
+//     console.log(productItem)    
 
-    for(let i = 0 ; i < productItem.length; i++){
-            // console.log("반복문실행됨")
-            // console.log(menu_number)
-            // console.log(productItem[i].productno)
-        if(menu_number == productItem[i].productno
-            ){
-            productItem.splice([i],1)
-        }
-    }
-    console.log("실행")
-    localStorage.setItem("productItem",JSON.stringify(productItem)) /* 저장 */
-}
+//     for(let i = 0 ; i < productItem.length; i++){
+//             // console.log("반복문실행됨")
+//             // console.log(menu_number)
+//             // console.log(productItem[i].productno)
+//         if(menu_number == productItem[i].productno
+//             ){
+//             productItem.splice([i],1)
+//         }
+//     }
+//     console.log("실행")
+//     localStorage.setItem("productItem",JSON.stringify(productItem)) /* 저장 */
+// }
 
 // 총매출 출력
 document.addEventListener("DOMContentLoaded",function(){
@@ -138,8 +139,7 @@ function 카테고리출력(){
      출력위치.innerHTML = html;   
 }
 
-// }else{alert("비밀번호가 틀렸습니다.")
-// location.href="../html/전승호과제메뉴페이지.html"}
+
 
 
 
@@ -245,3 +245,5 @@ function fix함수(매개변수){ /* 매개변수 = productItem의 인덱스 번
 
 
 /* ~~~~~~~~~~~~~~~~~~~ 전승호의 수정라인 끝 ~~~~~~~~~~ */
+}else{alert("비밀번호가 틀렸습니다.")
+location.href="../html/전승호과제메뉴페이지.html"}
