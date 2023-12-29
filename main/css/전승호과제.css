@@ -55,7 +55,7 @@
     height: 250px;
 }
     #cartTop{height: 50PX; padding: 0 10px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; color: white;}
-    #cartBottom{height: 150px; display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center; overflow-y: scroll;}
+    #cartBottom{height: 150px; display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center; overflow-y: auto;}
     .cartInfo{background-color: #f28d35; width: 90%; border-radius: 5px; display: flex; justify-content: space-around;  margin-top: 15px; color: white;}
     
     #cartBtns{

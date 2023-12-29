@@ -116,3 +116,40 @@ table{
 td{
     text-align: center;
 }
+
+
+
+
+/* 전승호수정내용 */
+#menuTable{/* 전체 사이즈 */
+    width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+}
+#제품번호2{width: 60px;}
+#제품명2{width: 180px;}
+#카테고리번호2{width:70px;}
+#가격2{width:70px;}
+#이미지이름2{width:70px;}
+#설명2{width: 100px;}
+#비고2{width:30px;}
+
+.menuCell{height: 50px;}
+.이미지이름{
+    overflow-y: auto;
+    width: 100%;
+    display: inline-block;
+    max-height: 50px;
+}
+.설명2{
+    overflow-y: auto;
+    width: 100%;
+    display: inline-block;
+    max-height: 50px;
+}
+
+#menuTable div{display: flex; padding: 0px 5px; justify-content: center;}
+#menuTable select{width: 75px;}
+.fix버튼키{width: 50px;}
+.삭제버튼키{width: 125px; margin: 0 auto;}
+/* 전승호수정내용  끝*/

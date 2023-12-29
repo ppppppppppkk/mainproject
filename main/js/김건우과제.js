@@ -179,25 +179,25 @@ function 메뉴출력하기(){
     let 출력용 = ``;/* 출력하기위한 변수 */
     for(let i = 0; i<productItem.length; i++){
         출력용 +=`<tr class="menuCell">
-                    <td>${productItem[i].productno}</td>
-                    <td>${productItem[i].item}</td>
-                    <td>${productItem[i].cateno}</td>
-                    <td>${productItem[i].pirce.toLocaleString()}원</td>
-                    <td>${productItem[i].img}</td>
-                    <td calss="설명">${productItem[i].설명}</td>
+                    <td class="제품번호">${productItem[i].productno}</td>
+                    <td class="버거이름">${productItem[i].item}</td>
+                    <td class="카테고리번호">${productItem[i].cateno}</td>
+                    <td class="가격">${productItem[i].pirce.toLocaleString()}원</td>
+                    <td> <span class="이미지이름">${productItem[i].img}</sapn> </td>
+                    <td> <span class="설명2"> ${productItem[i].설명} </span> </td>
                     <td>
                     <div>
                         <select id="수정선택${i}">
-                            <option value="productno">제품번호</option>
-                            <option value="item">버거이름</option>
-                            <option value="cateno">카테고리번호</option>
-                            <option value="pirce">가격</option>
-                            <option value="img">이미지이름</option>
-                            <option value="설명">설명</option>
+                            <option  value="productno">제품번호</option>
+                            <option  value="item">버거이름</option>
+                            <option  value="cateno">카테고리번호</option>
+                            <option  value="pirce">가격</option>
+                            <option  value="img">이미지이름</option>
+                            <option  value="설명">설명</option>
                         </select>
-                        <input onclick="fix함수(${i})" type="button" value="수정">
+                        <input class="fix버튼키" onclick="fix함수(${i})" type="button" value="수정">
                     </div>
-                        <input onclick="delete함수(${i})" type="button" value="삭제">
+                        <input class="삭제버튼키" onclick="delete함수(${i})" type="button" value="삭제">
                     </td>
                 </tr>`
     }
