@@ -173,7 +173,7 @@ function 결제페이지카트출력(){// 함수 선언[실행조건 임시장�
                     console.log( productno );
                     console.log( productItem[j] ); // 찾은 제품정보.
 
-                    html += `<p> 메뉴: ${ productItem[j].item }, 가격: ${ productItem[j].pirce.toLocaleString() }원 <button onclick="버튼삭제함수(${productno})"> 삭제 </button> </p>`
+                    html += `<p> 메뉴: ${ productItem[j].item }, 가격: ${ productItem[j].pirce.toLocaleString() }원  </p>`
 
                 }
             }
@@ -181,9 +181,3 @@ function 결제페이지카트출력(){// 함수 선언[실행조건 임시장�
     //3. 출력
     menuLine.innerHTML = html;
 } // f end 
-
-function 버튼삭제함수(productno){ //삭제버튼을 클릭했을시 
-    console.log('버튼삭제함수()' );
-    console.log('productno : :'+productno );
-    
-}
