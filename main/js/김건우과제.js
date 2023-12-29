@@ -1,6 +1,6 @@
-// const 비밀번호 = 1002;
-// const 입력된비번 = prompt("관리자 비밀번호를 쓰세요")
-// if( 비밀번호 == 입력된비번){
+ const 비밀번호 = 1002;
+ const 입력된비번 = prompt("관리자 비밀번호를 쓰세요")
+ if( 비밀번호 == 입력된비번){
 
 
 
@@ -139,8 +139,7 @@ function 카테고리출력(){
      출력위치.innerHTML = html;   
 }
 
-// }else{alert("비밀번호가 틀렸습니다.")
-// location.href="../html/전승호과제메뉴페이지.html"}
+
 
 
 
@@ -246,3 +245,5 @@ function fix함수(매개변수){ /* 매개변수 = productItem의 인덱스 번
 
 
 /* ~~~~~~~~~~~~~~~~~~~ 전승호의 수정라인 끝 ~~~~~~~~~~ */
+}else{alert("비밀번호가 틀렸습니다.")
+location.href="../html/전승호과제메뉴페이지.html"}
