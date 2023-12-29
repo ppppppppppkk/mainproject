@@ -104,7 +104,6 @@ function totalPrice(){
     return totalprice;
 
 }
-
 //결제 완료 버튼 
 function successPayment(){
     const successPay = document.querySelector("#successPay")
@@ -121,6 +120,8 @@ function successPayment(){
         alert("결제가 완료되었습니다.")
         총금액+= totalPrice();
         localStorage.setItem("총금액",JSON.stringify(총금액))/* 로컬저장 */
+        //cart.length = 0;
+        //location.href="../../html/전승호과제메뉴페이지.html"
     }else if(enterpay>totalpay){
         alert(`결제가 완료되었습니다. 거스름돈은 : ${enterpay-totalpay} 입니다.`)
         총금액+= totalPrice();
@@ -128,7 +129,9 @@ function successPayment(){
     }else{
         alert("결제 실패했습니다.")
     }
-
+    orderListnum()
+    orderListdate()
+    orderListproductnum()
 }
 
 // 더블 선택 함수 요청사항 부분
