@@ -48,15 +48,15 @@
 
 #cartBox{
     display: none;
-    background-color: #bf403491;
+    background-color: rgba(0, 120, 174 ,0.8);
     border-radius: 15px;
     position: sticky;
     bottom: 0px;
     height: 250px;
 }
-    #cartTop{height: 50PX; padding: 0 10px; display: flex; justify-content: space-between; align-items: center; font-weight: bold;}
-    #cartBottom{height: 150px; display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center; overflow-y: scroll; }
-        .cartInfo{background-color: #f28D35; width: 90%; border-radius: 5px; display: flex; justify-content: space-around; font-weight: bold; margin-top: 15px;}
+    #cartTop{height: 50PX; padding: 0 10px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; color: white;}
+    #cartBottom{height: 150px; display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center; overflow-y: scroll;}
+    .cartInfo{background-color: #f28d35; width: 90%; border-radius: 5px; display: flex; justify-content: space-around;  margin-top: 15px; color: white;}
     
     #cartBtns{
         position: relative;
@@ -69,5 +69,5 @@
         width: 45%;
         height: 40px;   
     }
-    #buttonBuy{background-color: #f2b872;}
-    #buttonCencle{background-color: #f28D35;}
+    #buttonBuy{background-color: white;}
+    #buttonCencle{background-color: white;}
