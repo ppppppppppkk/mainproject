@@ -44,45 +44,36 @@ function category출력(매개변수){
     goodsCategory.innerHTML = 출력용
 }
 
-function 구매선택(매개변수){/* 매개변수 = 제품번호 */
-    console.log(매개변수+"실행됨")
+function 구매선택(매개변수){/* 매개변수 = 제품번호 // 제품을 클릭할때 발생되는 함수 */
+
     const cartBox = document.querySelector('#cartBox')
-    cartBox.style.display = 'block';
+    cartBox.style.display = 'block';                /* cartBox CSS의 display를 block으로 바꿈 */
 
-    let 출력위치 = document.querySelector('#cartBottom')
-
-    let productItem = JSON.parse(localStorage.getItem('productItem'));/* 호출 */
+    let 출력위치 = document.querySelector('#cartBottom')        /* 출력위치 지정 */
+    let productItem = JSON.parse(localStorage.getItem('productItem'));/* 로컬 호출 */
     
-    
-    let basket = ``; /* 선택한 품목 HTML형태로 만들기 */
+    let basket = ``; /* 선택한 품목 HTML형태로 만들기 */ // 장바구니에 표시될 형태
     for(let i= 0; i<productItem.length; i++){
         if(productItem[i].productno==매개변수){
             basket += `<div class="cartInfo">
                         <div>${productItem[i].item}</div>
                         <div>${productItem[i].pirce.toLocaleString()} 원</div>
-                    </div>`
-        }
+                    </div>`}
     }
 
-    임시장바구니.push(basket) /* 임시장바구니 라는 배열에 저장 */
+    임시장바구니.push(basket) /* 임시장바구니 라는 배열에 선택된 메뉴저장 */
     
     let cart임시 = {};
-    cart임시.productno = 매개변수;
-    console.log(cart임시)/* 테스트 */
-    cart.push(cart임시)
+    cart임시.productno = 매개변수; /* cart임시에 객체 추가 */
+    cart.push(cart임시)           /* cart 배열에 임시로 만든 객체 추가시킴 */
 
-    localStorage.setItem("cart",JSON.stringify(cart)) /* 로컬저장 */
+    localStorage.setItem("cart",JSON.stringify(cart)) /* cart로컬저장 */
     
-    console.log(cart)/* 테스트 */
-    // let cart = JSON.parse(localStorage.getItem('cart'));/* 호출 */
 
-
-    basket = ``;
-    console.log(임시장바구니[2])
+    basket = ``;/* 배열에 저장되있는 내용 다시 불러오기 */
     for(let a = 0; a<임시장바구니.length; a++){
         basket += 임시장바구니[a]
     }
-
 
     let 총금액 = 0;/* 총금액 구하기 반복문 */
     for(let b = 0; b<cart.length; b++){
