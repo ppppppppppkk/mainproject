@@ -53,8 +53,10 @@ h1{
     text-align: center;
     background-color: #0078ae;
     width: 400px;
+    height: 334px;
     margin: 10px auto;
     color: white;
+    
 }
 #menu_box > input{
     margin-bottom: 5px;
