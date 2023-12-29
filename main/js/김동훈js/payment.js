@@ -1,4 +1,5 @@
 
+
 const 임시장바구니 =[]
 let pay = [];
 let cart = [] ;
@@ -30,6 +31,7 @@ function cancel(){
     //2.무엇을 // cart에 담겨진 모든 값을 삭제한다.
      
     if(confirm("장바구니를 비우겠습니까?")){
+        //초기화
         cart.length =0;
         cancel.innerHTML = `장바구니가 비었습니다.`;
     }else{alert("취소합니다.")}
@@ -146,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function(){
     })
 })
 
-
+//============================================================
 document.addEventListener('DOMContentLoaded', function(){ //HTML모두 읽었을때 이벤트 함수 실행
      결제페이지카트출력();    
 })
@@ -168,7 +170,8 @@ function 결제페이지카트출력(){// 함수 선언[실행조건 임시장�
                     console.log( productno );
                     console.log( productItem[j] ); // 찾은 제품정보.
 
-                    html += `<p> 메뉴: ${ productItem[j].item }, 가격: ${ productItem[j].pirce.toLocaleString() }원  </p>`
+                    html += `<p> 메뉴: ${ productItem[j].item }, 가격: ${ productItem[j].pirce.toLocaleString() }원 <button onclick="버튼삭제함수(${productno})"> 삭제 </button> </p>`
+
                 }
             }
         }
@@ -176,3 +179,8 @@ function 결제페이지카트출력(){// 함수 선언[실행조건 임시장�
     menuLine.innerHTML = html;
 } // f end 
 
+function 버튼삭제함수(productno){ //삭제버튼을 클릭했을시 
+    console.log('버튼삭제함수()' );
+    console.log('productno : :'+productno );
+    
+}
