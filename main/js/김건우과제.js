@@ -24,7 +24,7 @@ const productItem = [
 // 카테고리 등록
 function cateWhite(){
 
-    let categoryCell = JSON.parse(localStorage.getItem('categoryCell'));/* 호출 */
+    let categoryCell = JSON.parse(localStorage.getItem('categoryCell'));/* 호출 */ 
     console.log(categoryCell);
     // [어디에]
     const cate_number = document.querySelector("#cateNo").value;
