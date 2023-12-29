@@ -1,7 +1,7 @@
-const 비밀번호 = 1002;
-const 입력된비번 = prompt("관리자 비밀번호를 쓰세요")
-if( 비밀번호 == 입력된비번){
-/* 저장용 주석 */
+// const 비밀번호 = 1002;
+// const 입력된비번 = prompt("관리자 비밀번호를 쓰세요")
+// if( 비밀번호 == 입력된비번){
+// /* 저장용 주석 */
 
 
 
@@ -108,8 +108,8 @@ function menuDelet(){
     console.log("실행")
     localStorage.setItem("productItem",JSON.stringify(productItem)) /* 저장 */
 }
-}else{alert("비밀번호가 틀렸습니다.")
-location.href="../html/전승호과제메뉴페이지.html"}
+// }else{alert("비밀번호가 틀렸습니다.")
+// location.href="../html/전승호과제메뉴페이지.html"}
 
 
 /* 

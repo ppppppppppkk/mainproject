@@ -39,3 +39,10 @@ div > span{
     font-size: 20px;
     font-weight: bold;
 }
+
+table{
+    width: 400px;
+}
+td{
+    text-align: center;
+}
