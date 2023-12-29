@@ -102,7 +102,6 @@ function totalPrice(){
     return totalprice;
 
 }
-
 //결제 완료 버튼 
 function successPayment(){
     const successPay = document.querySelector("#successPay")
@@ -128,7 +127,6 @@ function successPayment(){
     }else{
         alert("결제 실패했습니다.")
     }
-   
     orderListnum()
     orderListdate()
     orderListproductnum()
@@ -181,42 +179,3 @@ function 결제페이지카트출력(){// 함수 선언[실행조건 임시장�
     menuLine.innerHTML = html;
 } // f end 
 
-
-
-
-
-
-function orderListnum(){
-    const orderListnum = document.querySelector(".ordernum")
-
-    html=`${JSON.parse(localStorage.getItem('cart')) >= 1 ? cart[i]+1 : 1 }`
-
-    orderListnum.innerHTML=html;
-}
-
-
-
-function orderListdate(){
-    //1.어디에
-    const orderListdate = document.querySelector(".orderdate")
-    //2.무엇을
-
-    html=`${new Date()}`;
-
-    //3.출력
-    orderListdate.innerHTML=html;
-}
-
-
-function orderListproductnum(){
-    //1.어디에
-    const orderproduct = document.querySelector(".orderproduct")
-    //2.무엇을
-    let html =``;
-    
-    html=`${cart.productno}`;
-    
-    console.log(html)
-    //3.출력
-    orderproduct.innerHTML=html;
-}
