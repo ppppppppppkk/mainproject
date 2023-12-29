@@ -15,7 +15,7 @@ if( 비밀번호 == 입력된비번){
 // 카테고리 등록
 function cateWhite(){
 
-    let categoryCell = JSON.parse(localStorage.getItem('categoryCell'));/* 호출 */
+    let categoryCell = JSON.parse(localStorage.getItem('categoryCell'));/* 호출 */ 
     console.log(categoryCell);
     if( categoryCell == null ){ categoryCell = []}
     // [어디에]
