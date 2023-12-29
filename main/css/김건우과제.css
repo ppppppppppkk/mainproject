@@ -1,29 +1,60 @@
-
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+.notosanskr * { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
+*{font-family: 'Noto Sans KR', sans-serif;}
 
 #wrap{
-    width: 400px;
+    background-color: #d5e5f4;
     margin: 0 auto;
 }
-h1{
+h1{ 
     text-align: center;
-    background-color: #bf3f34;
+    background-color: #e51937;
     width: 400px;
     margin: 10px auto;
+    color: white;
+    border-radius: 10px;
+}
+
+#cate_input{
+    display: flex;
+    justify-content: center;
+}
+#cateNo{
+    width: 40px;
+    font-size: 25px;
+    text-align: center;
+}
+#cateName{
+    width: 220px;
+    font-size: 25px;
 }
 #cate_box{
     text-align: center;
-    background-color: #f2b872;
+    background-color: #0078ae;
     width: 400px;
+    height: 150px;
     margin: 10px auto;
+    color: white;
+    align-items: center;
 }
-#cate_box > input{
-    margin-bottom: 5px;
+#cate_box > #cate_button{
+    padding: 12px;
+}
+#cate_button > input{
+    width: 100px;
+    height: 45px;
+    font-size: 20px;
+    border: none;
+    background-color: white;
 }
 #menu_box{
     text-align: center;
-    background-color: #f2b872;
+    background-color: #0078ae;
     width: 400px;
     margin: 10px auto;
+    color: white;
 }
 #menu_box > input{
     margin-bottom: 5px;
@@ -39,9 +70,24 @@ div > span{
     font-size: 20px;
     font-weight: bold;
 }
-
+#메인페이지로가기{
+    display: flex;
+    justify-content: center;
+}
+#메인페이지로가기 > a >img{
+    width: 300px;
+    text-align: center;
+    margin: -80px auto;
+}
+#cate_table{
+    width: 500px;
+    margin: 0 auto;
+    background-color: white;
+    font-weight: bold;
+    
+}
 table{
-    width: 400px;
+    width: 500px;
 }
 td{
     text-align: center;

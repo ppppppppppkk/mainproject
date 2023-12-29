@@ -36,29 +36,26 @@ function cateWhite(){
 
     // [출력]
     localStorage.setItem("categoryCell",JSON.stringify(categoryCell)) /* 저장 */
+    카테고리출력();
 }
 
 // 카테고리 삭제
-function cateDelet(){
+function cateDelete(매개변수){
     
     let categoryCell = JSON.parse(localStorage.getItem('categoryCell'));/* 호출 */
-    const cate_number = document.querySelector("#cateNo").value
-    console.log(categoryCell)    
+    
+    categoryCell.splice(매개변수,1);
+    
 
-    for(let i = 0; i < categoryCell.length; i++){
-            
-        if(cate_number == categoryCell[i].cateno){
-            categoryCell.splice([i],1)
-        }
-    }
     console.log("실행")
     localStorage.setItem("categoryCell",JSON.stringify(categoryCell)) /* 저장 */
+    카테고리출력();
 }
 
 // 메뉴 등록
 function menuWhite(){
     console.log("함수실행")
-    let productItem = JSON.parse(localStorage.getItem('productItem'));
+    let productItem = JSON.parse(localStorage.getItem('productItem')); // 호출
     if(productItem == null){productItem = []}
     console.log(productItem);
 
@@ -87,7 +84,7 @@ function menuWhite(){
 }
 
 // 메뉴 삭제
-function menuDelet(){
+function menuDelete(){
     
     let productItem = JSON.parse(localStorage.getItem('productItem'));/* 호출 */
     
@@ -107,8 +104,45 @@ function menuDelet(){
     console.log("실행")
     localStorage.setItem("productItem",JSON.stringify(productItem)) /* 저장 */
 }
+
+// 총매출 출력
+document.addEventListener("DOMContentLoaded",function(){
+    const manymoney = document.querySelector("#manyMoney");
+    console.log(manymoney)
+    let 총금액 = JSON.parse(localStorage.getItem('총금액')).toLocaleString();/* 호출 */
+    console.log(총금액.toLocaleString());
+    let html = ``;
+    
+    html += `<span id="manyMoney">총매출 : ${총금액}원</span>`;
+    
+    manymoney.innerHTML = html;
+})
+
+
+// 카테고리 테이블 출력
+카테고리출력();
+function 카테고리출력(){
+    let categoryCell = JSON.parse (localStorage.getItem('categoryCell'));
+    
+    const 출력위치 = document.querySelector("#출력위치")
+
+    let html = '';
+    for(let i = 0 ; i < categoryCell.length ; i++){
+    html += `<tbody id="출력위치">
+            <td>${categoryCell[i].cateno}</td>
+            <td>${categoryCell[i].catename}</td>
+            <td><input onclick="cateDelete(${i})" type="button" value="삭제"/></td>
+            </tbody>`
+        }
+
+     출력위치.innerHTML = html;   
+}
+
 // }else{alert("비밀번호가 틀렸습니다.")
 // location.href="../html/전승호과제메뉴페이지.html"}
+
+
+
 
 
 /* 
