@@ -109,22 +109,19 @@ function successPayment(){
 
     let 총금액 = JSON.parse(localStorage.getItem('총금액'));/* 호출 */
     console.log("총금액"+총금액)
-    if(총금액 == null){총금액 = []}
+    if(총금액 == null){총금액 = 0}
     let enterpay = prompt("결제 금액을 입력하세요");
     enterpay = Number(enterpay);
 
     let totalpay = totalPrice()
-    let 총금액임시 ={};/* 객체 로컬추가용 임시 변수 */
     console.log( totalpay );
     if(   enterpay == totalpay){
         alert("결제가 완료되었습니다.")
-        총금액임시.pirce=totalpay;
-        총금액+=총금액임시;
+        총금액+= totalPrice();
         localStorage.setItem("총금액",JSON.stringify(총금액))/* 로컬저장 */
     }else if(enterpay>totalpay){
         alert(`결제가 완료되었습니다. 거스름돈은 : ${enterpay-totalpay} 입니다.`)
-        총금액임시.pirce=totalpay
-        총금액+=총금액임시;
+        총금액+= totalPrice();
         localStorage.setItem("총금액",JSON.stringify(총금액))/* 로컬저장 */
     }else{
         alert("결제 실패했습니다.")
@@ -171,7 +168,7 @@ function 결제페이지카트출력(){// 함수 선언[실행조건 임시장�
                     console.log( productno );
                     console.log( productItem[j] ); // 찾은 제품정보.
 
-                    html += `<p> 메뉴: ${ productItem[j].item }, 가격: ${ productItem[j].pirce.toLocaleString() }원 </p>`
+                    html += `<p> 메뉴: ${ productItem[j].item }, 가격: ${ productItem[j].pirce.toLocaleString() }원  </p>`
                 }
             }
         }
