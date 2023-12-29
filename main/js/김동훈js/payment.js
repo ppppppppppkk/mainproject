@@ -187,3 +187,5 @@ function 버튼삭제함수(productno){ //삭제버튼을 클릭했을시
     console.log('productno : :'+productno );
     
 }
+
+
