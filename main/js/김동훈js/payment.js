@@ -181,3 +181,5 @@ function 결제페이지카트출력(){// 함수 선언[실행조건 임시장�
     //3. 출력
     menuLine.innerHTML = html;
 } // f end 
+
+
