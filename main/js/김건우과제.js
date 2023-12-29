@@ -166,3 +166,82 @@ const productItem = [
     {productno: 13,item : "리코타 페퍼로니 킹덤",cateno : 4,pirce : 29900,img :"img/리코타 페퍼로니 킹덤.jpg",설명 : "#[도미노x슈퍼 마리오]페퍼로니 가득한 도미노만의 버섯왕국이 눈앞에!" },
     {productno: 14,item : "포테이토",cateno : 4,pirce : 27900,img :"img/포테이토.jpg",설명 : "#도미노피자 No.1 레전드" }
 ] */
+
+
+/* ~~~~~~~~~~~~~~~~~ 전승호의 수정 라인 ~~~~ */
+메뉴출력하기()
+/* 관리자페이지 등록되있는 메뉴항목을 출력시키기 위한 함수 */
+function 메뉴출력하기(){
+    let productItem = JSON.parse(localStorage.getItem('productItem'));/* 호출 */
+    const 출력위치 = document.querySelector("#menuTbody")/* 출력 될 위치 */
+    
+
+    let 출력용 = ``;/* 출력하기위한 변수 */
+    for(let i = 0; i<productItem.length; i++){
+        출력용 +=`<tr class="menuCell">
+                    <td>${productItem[i].productno}</td>
+                    <td>${productItem[i].item}</td>
+                    <td>${productItem[i].cateno}</td>
+                    <td>${productItem[i].pirce.toLocaleString()}원</td>
+                    <td>${productItem[i].img}</td>
+                    <td calss="설명">${productItem[i].설명}</td>
+                    <td>
+                    <div>
+                        <select id="수정선택${i}">
+                            <option value="productno">제품번호</option>
+                            <option value="item">버거이름</option>
+                            <option value="cateno">카테고리번호</option>
+                            <option value="pirce">가격</option>
+                            <option value="img">이미지이름</option>
+                            <option value="설명">설명</option>
+                        </select>
+                        <input onclick="fix함수(${i})" type="button" value="수정">
+                    </div>
+                        <input onclick="delete함수(${i})" type="button" value="삭제">
+                    </td>
+                </tr>`
+    }
+    출력위치.innerHTML = 출력용
+}
+function delete함수(매개변수){/* 매개변수 = productItem의 인덱스 번호 */
+    let productItem = JSON.parse(localStorage.getItem('productItem'));/* 호출 */
+    // console.log(매개변수)
+    productItem.splice(매개변수,1);
+    
+    localStorage.setItem("productItem",JSON.stringify(productItem)) /* 로컬저장 */
+    메뉴출력하기()
+}
+function fix함수(매개변수){ /* 매개변수 = productItem의 인덱스 번호 */
+    let productItem = JSON.parse(localStorage.getItem('productItem'));/* 호출 */
+    let 수정선택 = document.querySelector(`#수정선택${매개변수}`).value /* 수정 원하는 선택위치 받아오기 */
+    let 입력받은값 = prompt("수정할 내용으로 입력해주세요")
+    // console.log(수정선택)
+    // console.log( productItem[매개변수])
+    let 함수수정용 = {};
+    함수수정용={
+        productno: productItem[매개변수].productno,
+        item : productItem[매개변수].item,
+        cateno : productItem[매개변수].cateno,
+        pirce : productItem[매개변수].pirce,
+        img : productItem[매개변수].img,
+        설명 : productItem[매개변수].설명
+    }
+
+    // console.log( 함수수정용);
+
+    함수수정용[수정선택] = 수정선택=="productno"||수정선택=="cateno"||수정선택=="pirce"? Number(입력받은값):String(입력받은값);
+
+    // console.log( 함수수정용);
+
+    productItem.splice(매개변수,1)          /* 삭제 */
+    productItem.splice(매개변수,0,함수수정용)   /* 삭제한 위치에 다시추가 */
+    // console.log(productItem)
+    localStorage.setItem("productItem",JSON.stringify(productItem)) /* 로컬저장 */
+
+    
+    메뉴출력하기()
+
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~ 전승호의 수정라인 끝 ~~~~~~~~~~ */

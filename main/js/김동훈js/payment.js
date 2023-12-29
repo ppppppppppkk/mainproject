@@ -1,4 +1,5 @@
 
+
 const 임시장바구니 =[]
 let pay = [];
 let cart = [] ;
@@ -30,6 +31,7 @@ function cancel(){
     //2.무엇을 // cart에 담겨진 모든 값을 삭제한다.
      
     if(confirm("장바구니를 비우겠습니까?")){
+        //초기화
         cart.length =0;
         cancel.innerHTML = `장바구니가 비었습니다.`;
     }else{alert("취소합니다.")}
@@ -102,7 +104,6 @@ function totalPrice(){
     return totalprice;
 
 }
-
 //결제 완료 버튼 
 function successPayment(){
     const successPay = document.querySelector("#successPay")
@@ -119,6 +120,8 @@ function successPayment(){
         alert("결제가 완료되었습니다.")
         총금액+= totalPrice();
         localStorage.setItem("총금액",JSON.stringify(총금액))/* 로컬저장 */
+        //cart.length = 0;
+        //location.href="../../html/전승호과제메뉴페이지.html"
     }else if(enterpay>totalpay){
         alert(`결제가 완료되었습니다. 거스름돈은 : ${enterpay-totalpay} 입니다.`)
         총금액+= totalPrice();
@@ -126,7 +129,9 @@ function successPayment(){
     }else{
         alert("결제 실패했습니다.")
     }
-
+    orderListnum()
+    orderListdate()
+    orderListproductnum()
 }
 
 // 더블 선택 함수 요청사항 부분
@@ -146,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function(){
     })
 })
 
-
+//============================================================
 document.addEventListener('DOMContentLoaded', function(){ //HTML모두 읽었을때 이벤트 함수 실행
      결제페이지카트출력();    
 })
@@ -168,7 +173,8 @@ function 결제페이지카트출력(){// 함수 선언[실행조건 임시장�
                     console.log( productno );
                     console.log( productItem[j] ); // 찾은 제품정보.
 
-                    html += `<p> 메뉴: ${ productItem[j].item }, 가격: ${ productItem[j].pirce.toLocaleString() }원  </p>`
+                    html += `<p> 메뉴: ${ productItem[j].item }, 가격: ${ productItem[j].pirce.toLocaleString() }원 <button onclick="버튼삭제함수(${productno})"> 삭제 </button> </p>`
+
                 }
             }
         }
@@ -176,3 +182,8 @@ function 결제페이지카트출력(){// 함수 선언[실행조건 임시장�
     menuLine.innerHTML = html;
 } // f end 
 
+function 버튼삭제함수(productno){ //삭제버튼을 클릭했을시 
+    console.log('버튼삭제함수()' );
+    console.log('productno : :'+productno );
+    
+}

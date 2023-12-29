@@ -1,25 +1,41 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+.notosanskr * { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
+*{font-family: 'Noto Sans KR', sans-serif;}
+
 body{
     width: 350px;
     border: 2px solid black;
     text-align: center;
     margin: 0 auto;
+    
 }
+
+.MenuL_ine{
+    background-color: pink;
+    border-radius: 15px;
+    padding: 3px 0px;
+}
+
+
 
 #paymentBtn > input{
     width: 170px;
     height: 50px;
     text-align: center;
-    background-color: azure;
-    color: black;
+    background-color: #0078AE;
+    color: white;
     font-weight: bold;
     border-radius: 20px;
     margin: 10px;
     cursor: pointer;
+    border: none;
 }
 
 #totalPrice > .tpContent{
     font-weight: bold;
-    color: red;
+    color: #0078AE;
 }
 
 #totalPrice > span{
@@ -28,15 +44,19 @@ body{
     
 }
 #print{
-    border: 1px solid pink;
-    
+    border-radius: 15px;
+    background-color: pink;
+    padding: 3px 0px;
 }
 img{
+    
     width: 100px; height: 100px;
-    padding-right: 509px;
-    cursor:auto;
+    cursor:pointer;
+    
 }
-
+#headPage{
+    text-align: left;
+}
 
 
 #paymentBtn{
@@ -46,24 +66,33 @@ img{
 }
 #paymentBtn .payBtn:active{
     background-color: #e8e8e8;
-    
 }
 
 
 #pay_page{ 
     font-weight: bold;
     margin: 20px ;
+    font-size: 25px;
 }
 #paymentBtn > .payBtn{
-    color: red;
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
 }
-
+#paymentBtn > .payBtnC{
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+}
 
 .tpContent{ 
     margin-top: 16px;
-    
 }
 
 select{
+    cursor: pointer;
+}
+
+#successPay:hover{
     cursor: pointer;
 }
